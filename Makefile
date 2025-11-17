@@ -6,19 +6,19 @@
 #    By: afournie <afournie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 16:14:46 by afournie          #+#    #+#              #
-#    Updated: 2025/11/12 16:16:13 by afournie         ###   ########.fr        #
+#    Updated: 2025/11/17 16:53:39 by afournie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libftprintf.a
 
 CC				=	gcc
-CFLAGS			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror -g
 AR				=	ar
 ARFLAGS 		=	rcs
 RM				=	rm -rf
 
-SRC				=	ft_printf
+SRC				=	ft_printf ft_printf_utils
 SRCS 			=	$(addsuffix .c, $(SRC))
 
 OBJ_DIR			=	obj
