@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:45:01 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/17 18:04:20 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:13:33 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_print(const char s, va_list *arg, int *count)
 		(*count)++;
 	}
 	else if (s == FORMAT_POINT)
-		(*count) += ft_print_ptr(va_arg(*arg, unsigned long long int));
+		(*count) += ft_print_ptr(va_arg(*arg, void *));
 	else if (s == FORMAT_STR)
 		(*count) += ft_putstr(va_arg(*arg, char *));
 }

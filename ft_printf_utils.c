@@ -6,13 +6,13 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:26:24 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/17 17:40:14 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:15:05 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putnbr_hexa_low(unsigned int n)
+int	ft_putnbr_hexa_low(unsigned long n)
 {
 	int	count;
 
@@ -55,11 +55,11 @@ int	ft_putnbr_udesc(unsigned int n)
 	return (count);
 }
 
-int	ft_print_ptr(unsigned long long int adress)
+int	ft_print_ptr(void *adress)
 {
 	if (adress == 0)
 		return (write(1, "(nil)", 5));
-	return (write(1, "0x", 2) + ft_putnbr_hexa_low(adress));
+	return (write(1, "0x", 2) + ft_putnbr_hexa_low((unsigned long)adress));
 }
 
 int	ft_putstr(char *s)

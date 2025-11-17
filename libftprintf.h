@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:43:15 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/17 17:47:39 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:15:17 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@
 void	ft_print(const char s, va_list *arg, int *count);
 int		ft_printf(const char *s, ...);
 int		ft_is_format(const char s);
-int		ft_putnbr_hexa_low(unsigned int n);
+int		ft_putnbr_hexa_low(unsigned long n);
 int		ft_putnbr_hexa_up(unsigned int n);
 int		ft_putnbr_udesc(unsigned int n);
-int		ft_print_ptr(unsigned long long int adress);
+int		ft_print_ptr(void *adress);
 int		ft_putstr(char *s);
 int		ft_putnbr(int n);
 
