@@ -6,38 +6,12 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:45:01 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/17 18:13:33 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/18 11:52:37 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #include <stdio.h>
-
-int	ft_putnbr(int n)
-{
-	int	n1;
-	int	i;
-
-	i = 0;
-	n1 = n;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', 1);
-		n1 = -n;
-		i++;
-	}
-	if (n1 <= 9)
-	{
-		ft_putchar_fd(n1 + '0', 1);
-		i++;
-	}
-	else
-	{
-		ft_putnbr_fd(n1 / 10, 1);
-		ft_putnbr_fd(n1 % 10, 1);
-	}
-	return (i);
-}
 
 int	ft_is_format(const char s)
 {
@@ -78,20 +52,21 @@ int	ft_printf(const char *s, ...)
 	int		count;
 	va_list	args;
 
-	i = 0;
+	i = -1;
 	count = 0;
+	if (!s || (s[0] == '%' && !s[1]))
+		return (-1);
 	va_start(args, s);
-	while (s[i])
+	while (s[++i])
 	{
 		if (s[i] == '%' && ft_is_format(s[i + 1]))
 		{
 			ft_print(s[i + 1], &args, &count);
-			i += 2;
+			i++;
 		}
 		else
 		{
 			ft_putchar_fd(s[i], 1);
-			i++;
 			count++;
 		}
 	}
@@ -99,15 +74,17 @@ int	ft_printf(const char *s, ...)
 	return (count);
 }
 
-int	main(void)
+int main(void)
 {
-	int	oui;
-	int	non;
+	int test;
+	int test2;
 
-	 char	*test;
-	 test = "test";
-	oui = ft_printf("Hello, %p \n", &test);
-	non = printf("Hello, %p \n", &test);
-	printf("ft : %d \n", oui);
-	printf("printf : %d", non);
+	test = 0;
+	test2 = 0;
+	test = printf("hsuvhuirhuihfjgijd% % roighieohio%");
+	printf("\n");
+	test2 = ft_printf("hsuvhuirhuihfjgijd% % roighieohio%");
+	printf("\n%d\n", test);
+	printf("%d", test2);
 }
+
