@@ -6,14 +6,14 @@
 #    By: afournie <afournie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 16:14:46 by afournie          #+#    #+#              #
-#    Updated: 2025/11/18 11:31:01 by afournie         ###   ########.fr        #
+#    Updated: 2025/11/18 13:22:46 by afournie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libftprintf.a
 
 CC				=	cc
-CFLAGS			=	-Wall -Wextra
+CFLAGS			=	-Wall -Wextra -Werror
 AR				=	ar rcs
 RM				=	rm -rf
 
@@ -27,7 +27,7 @@ LIBFT_PATH		=	./libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
 $(OBJ_DIR)/%.o:		%.c
-					$(CC) -c $< -o $@
+					$(CC) $(CFLAGS) -c $< -o $@
 
 all:				$(NAME)
 

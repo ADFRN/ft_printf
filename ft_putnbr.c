@@ -6,53 +6,39 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 10:59:51 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/18 11:24:20 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:45:28 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int n)
 {
-	int	n1;
 	int	i;
 
 	i = 0;
-	n1 = n;
+	if (n == -2147483648)
+		return (ft_putstr("-2147483648"));
 	if (n < 0)
 	{
-		ft_putchar_fd('-', 1);
-		n1 = -n;
-		i++;
+		i += ft_putstr("-");
+		n = -n;
 	}
-	if (n1 <= 9)
-	{
-		ft_putchar_fd(n1 + '0', 1);
-		i++;
-	}
-	else
-	{
-		ft_putnbr_fd(n1 / 10, 1);
-		ft_putnbr_fd(n1 % 10, 1);
-	}
+	if (n >= 10)
+		i += ft_putnbr(n / 10);
+	ft_putchar_fd(n % 10 + '0', 1);
+	i++;
 	return (i);
 }
 
 int	ft_putnbr_udesc(unsigned int n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	if (n <= 9)
-	{
-		ft_putchar_fd(n + '0', 1);
-		count++;
-	}
-	else
-	{
-		ft_putnbr_udesc(n / 10);
-		ft_putnbr_udesc(n % 10);
-		count += 2;
-	}
-	return (count);
+	i = 0;
+	if (n >= 10)
+		i += ft_putnbr(n / 10);
+	ft_putchar_fd(n % 10 + '0', 1);
+	i++;
+	return (i);
 }

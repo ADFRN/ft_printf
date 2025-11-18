@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:43:15 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/17 18:15:17 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:22:07 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include "libft/libft.h"
 # include <stdarg.h>

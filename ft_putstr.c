@@ -6,11 +6,11 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:00:45 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/18 11:24:22 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:25:46 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_print_ptr(void *adress)
 {
@@ -24,7 +24,7 @@ int	ft_putstr(char *s)
 	int	i;
 
 	if (!s)
-		return (0);
+		s = "(null)";
 	i = 0;
 	while (s[i])
 	{

@@ -6,11 +6,11 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:45:01 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/18 11:52:37 by afournie         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:46:55 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int	ft_is_format(const char s)
@@ -73,18 +73,3 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (count);
 }
-
-int main(void)
-{
-	int test;
-	int test2;
-
-	test = 0;
-	test2 = 0;
-	test = printf("hsuvhuirhuihfjgijd% % roighieohio%");
-	printf("\n");
-	test2 = ft_printf("hsuvhuirhuihfjgijd% % roighieohio%");
-	printf("\n%d\n", test);
-	printf("%d", test2);
-}
-
