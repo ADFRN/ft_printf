@@ -6,14 +6,13 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:43:15 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/18 13:22:07 by afournie         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:05:49 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft/libft.h"
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -37,5 +36,6 @@ int		ft_putnbr_udesc(unsigned int n);
 int		ft_print_ptr(void *adress);
 int		ft_putstr(char *s);
 int		ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
 
 #endif

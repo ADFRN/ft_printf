@@ -6,7 +6,7 @@
 /*   By: afournie <afournie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:00:45 by afournie          #+#    #+#             */
-/*   Updated: 2025/11/18 13:25:46 by afournie         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:07:09 by afournie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ int	ft_putstr(char *s)
 		i++;
 	}
 	return (i);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
