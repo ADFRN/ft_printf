@@ -6,7 +6,7 @@
 #    By: afournie <afournie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 16:14:46 by afournie          #+#    #+#              #
-#    Updated: 2025/12/01 09:57:37 by afournie         ###   ########.fr        #
+#    Updated: 2025/12/01 10:38:12 by afournie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ $(OBJ_DIR)/%.o:		%.c
 
 all:				$(NAME)
 
-bonus:				all
 
 $(NAME):			$(OBJ_DIR) $(OBJS)
 					$(AR) $(NAME) $(OBJS)
